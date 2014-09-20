@@ -1,0 +1,4 @@
+# Machine-generated file - use setup menu in minicom to change parameters.
+pu port             /dev/tty.usbserial
+pu lock             /var/lock
+pu rtscts           No
