@@ -1,0 +1,8 @@
+# case MAC OS
+.DS_Store
+
+# case linux & unix
+*~
+
+# java programming
+*.class

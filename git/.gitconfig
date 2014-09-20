@@ -1,0 +1,112 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+
+[include]
+	# path = ~.gitfonfig.local
+[core]
+	# コミットメッセージ編集などにemacsエディタを使用
+	editor = emacs
+	# リポジトリに日本語ファイルが混じっても正しく表示
+	quotepath = false
+	# コミット時に改行コードであるCRLFとLF変換を行わない
+	autocrlf = false
+	# タブとスペースが混じっている行をコミット対象としない
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	# 追加で自分専用のホームにある.gitignoreを使用する(自分のディストリビューションで追加されてしまうファイルなどを無視させる)
+	excludesfile = $HOME/.gitignore
+
+[push]
+
+[pull]
+
+[branch]
+
+[merge]
+
+[rebase]
+
+[grep]
+ 	lineNumber = true
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+
+	# 単語レベルのdiffに変更(plainは{}を分割)
+	di = diff --word-diff=plain
+
+	st = status -sb
+
+	# 現在のブランチのコミットログ、コミットファイル、コミット量、Author、Date、SHA、コミットラインの表示
+	lg = log --graph --stat
+
+	# すべてのリモートブランチを含むブランチのコミットログ(head)、ブランチ名、Author、Date、SHA、コミットラインのフルカラー表示
+	graph = log --pretty=format:'%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --graph --all
+
+	# 現在のブランチのコミットログ(head)、ブランチ名、Author、Date、SHA、コミットラインをフルカラー表示
+	list = log --pretty=format:'%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --graph
+
+	# branch(Tag,refspec,SHA)に存在するファイルをcatする
+	# http://dqn.sakusakutto.jp/2013/06/git_cat-file.html
+	dump = cat-file -p
+
+	# branch(Tag,refspec,SHA)に存在するファイルをcatする
+	type = cat-file -t
+
+	gp = grep -H --heading --break
+
+	# hosting serves all type(type:branch,Tag,ref spec,SHA,sir-name,file-name...)
+	hing = browse-remote
+
+	albr = allbranch-clone
+
+## git outside script ##
+
+# 単語レベルでdiffがとれる
+# http://www.kt.rim.or.jp/~hisashim/docdiff/
+# http://d.hatena.ne.jp/thata/20100929/1285726038
+[diff "docdiff"]
+	# 外部diffツールの起動(使用には、リポジトリに.gitattributeを追加する
+	command = gitdocdiff.sh
+
+# gem install git-browse-remote
+# Usage http://subtech.g.hatena.ne.jp/motemen/20120917/1347889804
+[web]
+ 	browser = open
+[browser "chrome"]
+ 	cmd = open -a 'Google Chrome.app'
+[browse-remote "github.com"]
+	file = "https://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{line && \"#L%d\" % line}"
+	top = https://{host}/{path}
+	rev = https://{host}/{path}/commit/{commit}
+	ref = https://{host}/{path}/tree/{short_ref}
+
+[browse-remote "bitbucket.org"]
+	file = "https://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{line && \"#L%d\" % line}"
+	top = https://{host}/{path}
+	rev = https://{host}/{path}/commit/{commit}
+	ref = https://{host}/{path}/tree/{short_ref}
+
+[browse-remote "edo.cs.takushoku-u.ac.jp:22"]
+	file = "http://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{line && \"#L%d\" % line}"
+	top = https://{host}/{path}
+	rev = https://{host}/{path}/commit/{commit}
+	ref = https://{host}/{path}/tree/{short_ref}
+
+# install git.sh(https://gist.github.com/mnogu/38446999
+# .gitがある場所で使用すると、すべてのリモートブランチをcloneできる
+[allbranch-clone]
+	cmd = git-allbranch-clone
+[user]
+	name = tkmoteki 
+	email = mtk3540@gmail.com 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
