@@ -1,0 +1,8 @@
+ls
+cd Users/tek
+cd Users/tkmoteki/
+ls
+cd auto-complete-1.2/
+ls
+Load etc/install.el to install
+exit
