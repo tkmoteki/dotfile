@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<root>
+    <list>
+        <item>
+            <name>For nobeans</name>
+            <list>
+                <item>
+                    <name>PC style</name>
+                    <list>
+                        <item>
+                            <name>Control+X/C/V to Cut/Copy/Paste</name>
+                            <identifier>remap.controlXCV2copyPasteCut</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::X, VK_CONTROL, KeyCode::X, ModifierFlag::COMMAND_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::C, VK_CONTROL, KeyCode::C, ModifierFlag::COMMAND_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::V, VK_CONTROL, KeyCode::V, ModifierFlag::COMMAND_R</autogen>
+                        </item>
+                        <item>
+                            <name>Control+S to Save</name>
+                            <identifier>remap.controlS2save</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::S, VK_CONTROL, KeyCode::S, ModifierFlag::COMMAND_R</autogen>
+                        </item>
+                        <item>
+                            <name>Control+Z to Undo / Control+Y to Redo</name>
+                            <identifier>remap.controlZY2undoRedo</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::Z, VK_CONTROL, KeyCode::Z, ModifierFlag::COMMAND_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::Y, VK_CONTROL, KeyCode::Z, ModifierFlag::COMMAND_R | ModifierFlag::SHIFT_R</autogen>
+                        </item>
+                        <item>
+                            <name>Control+W to Window Close</name>
+                            <identifier>remap.controlW2closeWindow</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::W, VK_CONTROL, KeyCode::W, ModifierFlag::COMMAND_R</autogen>
+                        </item>
+                        <item>
+                            <name>Control+R to Reload</name>
+                            <identifier>remap.controlR2reload</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::R, VK_CONTROL, KeyCode::R, ModifierFlag::COMMAND_R</autogen>
+                        </item>
+                    </list>
+                </item>
+                <item>
+                    <name>Emacs style</name>
+                    <list>
+                        <item>
+                            <name>Control+PNBF to Up/Down/Left/Right</name>
+                            <appendix>(Only with modifier None or Shift)</appendix>
+                            <identifier>remap.emacsmode_controlPNBF_nobeans</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::CONTROL_L | ModifierFlag::NONE, KeyCode::CURSOR_UP</autogen>
+                            <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::CONTROL_L | ModifierFlag::NONE, KeyCode::CURSOR_DOWN</autogen>
+                            <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::CONTROL_L | ModifierFlag::NONE, KeyCode::CURSOR_LEFT</autogen>
+                            <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::CONTROL_L | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT</autogen>
+                            <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::CONTROL_L | VK_SHIFT | ModifierFlag::NONE, KeyCode::CURSOR_UP,    ModifierFlag::SHIFT_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::CONTROL_L | VK_SHIFT | ModifierFlag::NONE, KeyCode::CURSOR_DOWN,  ModifierFlag::SHIFT_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::CONTROL_L | VK_SHIFT | ModifierFlag::NONE, KeyCode::CURSOR_LEFT,  ModifierFlag::SHIFT_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::CONTROL_L | VK_SHIFT | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_R</autogen>
+                        </item>
+                        <item>
+                            <name>Control+D to Forward Delete</name>
+                            <appendix>(Without other modifiers; compatibile with Dictionary.app)</appendix>
+                            <identifier>option.emacsmode_controlD_nobeans</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::D, VK_CONTROL | ModifierFlag::NONE, KeyCode::FORWARD_DELETE</autogen>
+                        </item>
+                        <item>
+                            <name>Control+H to Delete</name>
+                            <appendix>(Without other modifiers)</appendix>
+                            <identifier>option.emacsmode_controlH_nobeans</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::H, VK_CONTROL | ModifierFlag::NONE, KeyCode::DELETE</autogen>
+                        </item>
+                        <item>
+                            <name>Control+M to Return</name>
+                            <appendix>(Without other modifiers)</appendix>
+                            <identifier>option.emacsmode_controlM_nobeans</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::M, VK_CONTROL | ModifierFlag::NONE, KeyCode::RETURN</autogen>
+                        </item>
+                        <item>
+                            <name>Control+AE to Command+Left/Right</name>
+                            <appendix>(Only with modifier None or Shift)</appendix>
+                            <identifier>option.emacsmode_controlAE_nobeans</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL | VK_SHIFT, KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL | VK_SHIFT, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L</autogen>
+                        </item>
+                    </list>
+                </item>
+                <item>
+                    <name>Original style</name>
+                    <list>
+                        <item>
+                            <name>Control+&lt; to PageUp / Control+&gt; to PageDown</name>
+                            <identifier>remap.controlLtGt2pageUpDown</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+                            <autogen>--KeyToKey-- KeyCode::COMMA, VK_CONTROL, KeyCode::PAGEUP</autogen>
+                            <autogen>--KeyToKey-- KeyCode::DOT,   VK_CONTROL, KeyCode::PAGEDOWN</autogen>
+                        </item>
+                        <item>
+                            <name>Control+&lt; to PageUp / Control+&gt; to PageDown</name>
+                            <appendix>(Not moving cursor only for Firefox)</appendix>
+                            <identifier>remap.controlLtGt2pageUpDown_Firefox</identifier>
+                            <only>FIREFOX</only>
+                            <autogen>--KeyToKey-- KeyCode::COMMA, VK_CONTROL, KeyCode::PAGEUP</autogen>
+                            <autogen>--KeyToKey-- KeyCode::DOT,   VK_CONTROL, KeyCode::PAGEDOWN</autogen>
+                        </item>
+                        <item>
+                            <name>Control+&lt; to PageUp / Control+&gt; to PageDown</name>
+                            <appendix>(Moving cursor as PC style)</appendix>
+                            <identifier>remap.controlLtGt2pageUpDown_Pc</identifier>
+                            <not>VI, EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, FIREFOX</not>
+                            <autogen>--KeyToKey-- KeyCode::COMMA, VK_CONTROL, KeyCode::PAGEUP, ModifierFlag::OPTION_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::DOT,   VK_CONTROL, KeyCode::PAGEDOWN, ModifierFlag::OPTION_L</autogen>
+                        </item>
+                        <item>
+                            <name>Option_R+Arrow for Spaces</name>
+                            <identifier>remap.spaces_special_optionR_arrows</identifier>
+                            <autogen>--KeyToKey-- KeyCode::CURSOR_UP,    ModifierFlag::OPTION_R, KeyCode::CURSOR_UP,    ModifierFlag::CONTROL_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_R, KeyCode::CURSOR_DOWN,  ModifierFlag::CONTROL_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_R, KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L</autogen>
+                            <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
+                        </item>
+                        <item>
+                            <name>Control+Tab to Change Tabs for Terminal</name>
+                            <identifier>remap.terminal_special_ctrlTab</identifier>
+                            <only>TERMINAL</only>
+                            <autogen>--KeyToKey-- KeyCode::TAB, VK_CONTROL | ModifierFlag::NONE, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_R | ModifierFlag::SHIFT_R</autogen>
+                            <autogen>--KeyToKey-- KeyCode::TAB, VK_CONTROL | VK_SHIFT | ModifierFlag::NONE, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_R | ModifierFlag::SHIFT_R</autogen>
+                        </item>
+                        <item>
+                            <name>Command+Escape to LeftClick</name>
+                            <identifier>remap.leftClick_nobeans</identifier>
+                            <autogen>--KeyToPointingButton-- KeyCode::ESCAPE, VK_COMMAND, PointingButton::LEFT</autogen>
+                        </item>
+                    </list>
+                </item>
+            </list>
+        </item>
+    </list>
+</root>
