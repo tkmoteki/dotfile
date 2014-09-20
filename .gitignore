@@ -1,0 +1,7 @@
+# case MAC OS
+.DS_Store
+
+# case linux & unix
+*~
+
+*.*swp
